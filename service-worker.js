@@ -1,11 +1,13 @@
-const CACHE_NAME = 'amdakl-v1';
+const CACHE_NAME = 'amdakl-v2';
+const BASE_PATH = '/Amdakl';
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png',
-  '/avatar.png'
+  BASE_PATH + '/',
+  BASE_PATH + '/index.html',
+  BASE_PATH + '/manifest.json',
+  BASE_PATH + '/avatar.png',
+  BASE_PATH + '/icon-192.png',
+  BASE_PATH + '/icon-512.png',
+  BASE_PATH + '/favicon.ico'
 ];
 
 self.addEventListener('install', (event) => {
@@ -44,7 +46,7 @@ self.addEventListener('fetch', (event) => {
       });
     }).catch(() => {
       if (event.request.destination === 'document') {
-        return caches.match('/index.html');
+        return caches.match(BASE_PATH + '/index.html');
       }
     })
   );

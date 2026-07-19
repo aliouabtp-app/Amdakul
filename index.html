@@ -6,14 +6,14 @@
 <title>أمداكل - مساعدك الذكي بالدارجة المغربية</title>
 
 <!-- PWA Meta Tags -->
-<link rel="manifest" href="manifest.json">
+<link rel="manifest" href="/Amdakl/manifest.json">
 <meta name="theme-color" content="#059669">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="أمداكل">
-<link rel="apple-touch-icon" href="icon-192.png">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="apple-touch-icon" href="/Amdakl/icon-192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/Amdakl/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/Amdakl/icon-512.png">
 
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -202,7 +202,7 @@
 <body>
 <div class="app-container">
   <div class="splash" id="splash">
-    <div class="splash-avatar"><img src="avatar.png" alt="أمداكل"></div>
+    <div class="splash-avatar"><img src="/Amdakl/avatar.png" alt="أمداكل"></div>
     <div class="splash-title">أمداكل</div>
     <div class="splash-subtitle">مساعدك الذكي بالدارجة المغربية</div>
     <div class="splash-loading"></div>
@@ -260,7 +260,7 @@
     <div class="header-left">
       <div class="menu-icon" onclick="toggleSidebar()">☰</div>
       <div class="logo">
-        <div class="logo-icon"><img src="avatar.png" alt="أمداكل"></div>
+        <div class="logo-icon"><img src="/Amdakl/avatar.png" alt="أمداكل"></div>
         <div class="logo-text">
           <div class="app-name">أمداكل</div>
           <div class="status" id="statusText"><span>●</span> جاري التحميل...</div>
@@ -671,7 +671,7 @@ function addMessage(text, sender, image) {
   if (image) imageHtml = '<img src="' + image + '" class="msg-image" alt="صورة">';
   let formattedText = formatText(text);
   const avatar = sender === 'bot' 
-    ? '<div class="avatar bot-avatar"><img src="avatar.png" alt="أمداكل"></div>' 
+    ? '<div class="avatar bot-avatar"><img src="/Amdakl/avatar.png" alt="أمداكل"></div>' 
     : '<div class="avatar user-avatar">👤</div>';
   const senderName = sender === 'bot' ? 'أمداكل' : 'أنت';
   msgDiv.innerHTML = avatar + '<div class="bubble"><div class="sender">' + senderName + '</div>' + imageHtml + '<div class="text">' + formattedText + '</div><div class="time">' + time + '</div>' + (sender === 'bot' ? '<div class="message-actions"><button class="msg-action-btn" onclick="copyMessage(this)" title="نسخ">📋</button><button class="msg-action-btn" onclick="speakText(this.parentElement.parentElement.querySelector(\'.text\').textContent)" title="قراءة بصوت">🔊</button></div>' : '') + '</div>';
@@ -693,7 +693,7 @@ function showTyping() {
   const typingDiv = document.createElement('div');
   typingDiv.className = 'message bot-message';
   typingDiv.id = 'typingIndicator';
-  typingDiv.innerHTML = '<div class="avatar bot-avatar"><img src="avatar.png" alt="أمداكل"></div><div class="bubble"><div class="typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>';
+  typingDiv.innerHTML = '<div class="avatar bot-avatar"><img src="/Amdakl/avatar.png" alt="أمداكل"></div><div class="bubble"><div class="typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>';
   chatArea.appendChild(typingDiv);
   scrollToBottom();
 }
@@ -864,7 +864,7 @@ function loadChatHistory() {
 // PWA Registration
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('service-worker.js')
+    navigator.serviceWorker.register('/Amdakl/service-worker.js')
       .then((reg) => { console.log('SW registered:', reg.scope); })
       .catch((err) => { console.log('SW failed:', err); });
   });
